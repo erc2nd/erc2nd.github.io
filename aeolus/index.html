@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Aeolus Machine</title>
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="menu">
+        <div class="title">MENU</div>
+        <ul class="nav">
+          <li><button type="button" onclick="menuFunction('info','work','contact','aircraft')">HOME</button></li>
+          <li><button type="button" onclick="menuFunction('work','info','contact','aircraft')">METALWORK</button></li>
+          <li><button type="button" onclick="aircraftFunction('aircraft','info','work','contact')">AIRCRAFT</button></li>
+          <li><button type="button" onclick="menuFunction('contact','info','work','aircraft')">CONTACT</button></li>
+        </ul>
+    </div>
+    
+    <div id="intro">
+        <img id="icon" src="img/icon.png">
+        <h1 id="company">Aeolus Machine</h1>
+        <p id="info">A company producing prototype machines and parts for inventors and industry.<br/>
+        Capabilities include CNC machining, engineering, prototyping, and consulting.</p>
+        <img id="work" src="img/parts.jpg"></img>
+        <p id="contact">
+            Floyd Fronius<br>
+            619-283-2336<br/>
+            San Diego, California<br/>
+            <a href="mailto:aeolusmachine@gmail.com">aeolusmachine@gmail.com</a>
+        </p>
+    </div>
+
+    <div id="aircraft">
+        <div id="card_goat" class="card">
+            <img src="/img/goat.jpg" alt="The GOAT" id="goat">
+            <div class="container">
+                <h4><b>The Goat</b></h4>
+                <p>Like the Bug it is intended to be an inexpensive and easy-to-fly three-axis-controlled aircraft similar to a primary glider, although the designer terms it an airchair.</p>
+                <p></p>
+            </div>
+        </div>
+        <div id="card_sunseeker" class="card">
+            <img src="/img/sunseekerDuo.jpg" alt="The Sunseeker Duo" id="sunseeker">
+            <div class="container">
+                <h4><b>Sunseeker Duo</b></h4>
+                <p>The Sunseeker Duo is the most advanced solar powered airplane in the world.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GENERAL MENU FUNCTION
+        function menuFunction(item,x1,x2,x3) {
+            document.getElementById(item) .style.display='block';
+            document.getElementById(item) .style.animation='fadeIn 1s';
+            document.getElementById(x1) .style.display='none';
+            document.getElementById(x2) .style.display='none';
+            document.getElementById(x3) .style.display='none';
+            
+            document.getElementById(x1) .style.animation='fadeOut 1s';
+            document.getElementById(x2) .style.animation='fadeOut 1s';
+            document.getElementById(x3) .style.animation='fadeOut 1s';
+
+            if (document.getElementById('company') .style.display=='none') {
+                document.getElementById('company') .style.display='block';
+            }
+        }
+
+        // AIRCRAFT MENU FUNCTION
+        function aircraftFunction(ac,x1,x2,x3) {
+            document.getElementById(ac) .style.display='block';
+            document.getElementById('card_goat') .style.display='block';
+            document.getElementById('card_sunseeker') .style.display='block';
+            document.getElementById(ac) .style.animation='fadeIn 1s';
+
+            document.getElementById(x1) .style.display='none';
+            document.getElementById(x2) .style.display='none';
+            document.getElementById(x3) .style.display='none';
+            document.getElementById('company') .style.display='none'
+
+            document.getElementById(x1) .style.animation='fadeOut 1s';
+            document.getElementById(x2) .style.animation='fadeOut 1s';
+            document.getElementById(x3) .style.animation='fadeOut 1s';
+            document.getElementById('company') .style.animation='fadeOut 1s'
+        }
+    </script>
+
+</body>
+</html>
