@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Aeolus Machine</title>
+    <link rel="icon" href="/aeolus/img/favicon.png">
+    <link rel="stylesheet" href="/aeolus/style.css">
+</head>
+<body>
+    
+    <div class="menu">
+        <div class="title">MENU</div>
+        <ul class="nav">
+          <li><button type="button" onclick="menuFunction('info','work','contact','aircraft')">HOME</button></li>
+          <li><button type="button" onclick="menuFunction('work','info','contact','aircraft')">METALWORK</button></li>
+          <li><button type="button" onclick="aircraftFunction('aircraft','info','work','contact')">AIRCRAFT</button></li>
+          <li><button type="button" onclick="menuFunction('contact','info','work','aircraft')">CONTACT</button></li>
+        </ul>
+    </div>
+    
+    <div id="intro">
+        <img id="icon" src="/aeolus/img/icon.png">
+        <h1 id="company">Aeolus Machine</h1>
+        <p id="info">A company producing prototype machines and parts for inventors and industry.<br/>
+        Capabilities include CNC machining, engineering, prototyping, and consulting.</p>
+        <img id="work" src="/aeolus/img/parts.jpg"></img>
+        <p id="contact">
+            Floyd Fronius<br>
+            619-283-2336<br/>
+            San Diego, California<br/>
+            <a href="mailto:aeolusmachine@gmail.com">aeolusmachine@gmail.com</a>
+        </p>
+    </div>
+
+    <div id="aircraft" class="media-scroller snaps-inline">
+        <div id="card_goat" class="media-element">
+            <img src="/aeolus/img/goat.jpg" alt="The Goat">
+            <p class="title">The Goat</p>
+            <p class="details">Like the Bug it is intended to be an inexpensive and easy-to-fly three-axis-controlled aircraft similar to a primary glider, although the designer terms it an airchair.</p>
+        </div>
+        <div id="card_sunseeker" class="media-element">
+            <img src="/aeolus/img/sunseekerDuo.jpg" alt="Sunseeker">
+            <p class="title">Sunseeker Duo</p>
+            <p class="details">The Sunseeker Duo is the most advanced solar powered airplane in the world.</p>
+        </div>
+        <div id="cessna-skyhawk" class="media-element">
+            <img src="/aeolus/img/cessna-skyhawk.jpg" alt="">
+            <p class="title">Cessna Skyhawk</p>
+            <p class="details"></p>
+        </div>
+        <div id="cessna-206" class="media-element">
+            <img src="/aeolus/img/cessna-206.jpg" alt="">
+            <p class="title">Cessna 206</p>
+            <p class="details"></p>
+        </div>
+        <div id="cessna-180" class="media-element">
+            <img src="/aeolus/img/cessna-180.jpg" alt="">
+            <p class="title">Cessna 180</p>
+            <p class="details"></p>
+        </div>
+        <div id="not-plane" class="media-element">
+            <img src="/aeolus/img/not-plane.jpg" alt="">
+            <p class="title">Not a Plane</p>
+            <p class="details">This is a bird, not a plane or glider or anythign of the sort.</p>
+        </div>
+        <div id="fish" class="media-element">
+            <img src="/aeolus/img/fish.webp" alt="">
+            <p class="title">Not an Aeronautical Thing... Just Nautical</p>
+            <p class="details">It's a fish.</p>
+        </div>
+    </div>
+    <script>
+        // GENERAL MENU FUNCTION
+        function menuFunction(item,x1,x2,x3) {
+            document.getElementById(item) .style.display='block';
+            document.getElementById(item) .style.animation='fadeIn 1s';
+            document.getElementById(x1) .style.display='none';
+            document.getElementById(x2) .style.display='none';
+            document.getElementById(x3) .style.display='none';
+            
+            document.getElementById(x1) .style.animation='fadeOut 1s';
+            document.getElementById(x2) .style.animation='fadeOut 1s';
+            document.getElementById(x3) .style.animation='fadeOut 1s';
+
+            if (document.getElementById('company') .style.display=='none') {
+                document.getElementById('company') .style.display='block';
+            }
+        }
+
+        // AIRCRAFT MENU FUNCTION
+        function aircraftFunction(ac,x1,x2,x3) {
+            document.getElementById(ac) .style.display='grid';
+            document.getElementById('card_goat') .style.display='grid';
+            document.getElementById('card_sunseeker') .style.display='grid';
+            document.getElementById('cessna-skyhawk') .style.display='grid';
+            document.getElementById('cessna-206') .style.display='grid';
+            document.getElementById('cessna-180') .style.display='grid';
+            document.getElementById('not-plane') .style.display='grid';
+            document.getElementById('fish') .style.display='grid';
+            document.getElementById(ac) .style.animation='fadeIn 1s';
+
+            document.getElementById(x1) .style.display='none';
+            document.getElementById(x2) .style.display='none';
+            document.getElementById(x3) .style.display='none';
+            document.getElementById('company') .style.display='none'
+
+            document.getElementById(x1) .style.animation='fadeOut 1s';
+            document.getElementById(x2) .style.animation='fadeOut 1s';
+            document.getElementById(x3) .style.animation='fadeOut 1s';
+            document.getElementById('company') .style.animation='fadeOut 1s'
+        }
+    </script>
+
+</body>
+</html>

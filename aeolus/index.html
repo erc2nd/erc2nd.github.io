@@ -10,48 +10,41 @@
     <link rel="stylesheet" href="/aeolus/style.css">
 </head>
 <body>
-    <div class="menu">
-        <div class="title">MENU</div>
-        <ul class="nav">
-          <li><button type="button" onclick="menuFunction('info','work','contact','aircraft')">HOME</button></li>
-          <li><button type="button" onclick="menuFunction('work','info','contact','aircraft')">METALWORK</button></li>
-          <li><button type="button" onclick="aircraftFunction('aircraft','info','work','contact')">AIRCRAFT</button></li>
-          <li><button type="button" onclick="menuFunction('contact','info','work','aircraft')">CONTACT</button></li>
-        </ul>
-    </div>
-    
-    <div id="intro">
-        <img id="icon" src="/aeolus/img/icon.png">
+    <!-- HOME -->
+    <div id="navbar-id" class="home">
+        <img id="logo" src="/aeolus/img/icon.png">
         <h1 id="company">Aeolus Machine</h1>
         <p id="info">A company producing prototype machines and parts for inventors and industry.<br/>
         Capabilities include CNC machining, engineering, prototyping, and consulting.</p>
-        <img id="work" src="/aeolus/img/parts.jpg"></img>
-        <p id="contact">
-            Floyd Fronius<br>
-            619-283-2336<br/>
-            San Diego, California<br/>
-            <a href="mailto:aeolusmachine@gmail.com">aeolusmachine@gmail.com</a>
-        </p>
+        <div class="menu">
+            <ul class="nav">
+              <li><button id="home-button" type="button" onclick="homeFunction('info','metalwork-container','contact','aircraft')">HOME</button></li>
+              <li><button type="button" onclick="scrollFunction('metalwork-container','info','contact','aircraft')">METALWORK</button></li>
+              <li><button type="button" onclick="scrollFunction('aircraft','info','metalwork-container','contact')">AIRCRAFT</button></li>
+              <li><button type="button" onclick="contactFunction('contact','info','metalwork-container','aircraft','company')">CONTACT</button></li>
+            </ul>
+        </div>
     </div>
 
-    <!-- <div id="aircraft">
-        <div id="card_goat" class="card">
-            <img src="/aeolus/img/goat.jpg" alt="The GOAT" id="goat">
-            <div class="container">
-                <h4><b>The Goat</b></h4>
-                <p>Like the Bug it is intended to be an inexpensive and easy-to-fly three-axis-controlled aircraft similar to a primary glider, although the designer terms it an airchair.</p>
-                <p></p>
-            </div>
-        </div>
-        <div id="card_sunseeker" class="card">
-            <img src="/aeolus/img/sunseekerDuo.jpg" alt="The Sunseeker Duo" id="sunseeker">
-            <div class="container">
-                <h4><b>Sunseeker Duo</b></h4>
-                <p>The Sunseeker Duo is the most advanced solar powered airplane in the world.</p>
-            </div>
-        </div>
-    </div> -->
+    <!-- METALWORK -->
+    <div id="metalwork-container" class="media-scroller snaps-inline">
+        <div class="media-element"><img src="/aeolus/img/metalwork/parts.jpg"></img></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/009_7.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/a.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/b.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/c.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/cannon2 086.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/cannon2 101.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/cannon2 187.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/cannon2 379.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/CO2measure.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/hang1.jpg" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/IMG_0197.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/IMG_0202.JPG" alt=""></div>
+        <div class="media-element"><img src="/aeolus/img/metalwork/IMG_0396.JPG" alt=""></div>
+    </div>
 
+    <!-- AIRCRAFT -->
     <div id="aircraft" class="media-scroller snaps-inline">
         <div id="card_goat" class="media-element">
             <img src="/aeolus/img/goat.jpg" alt="The Goat">
@@ -66,17 +59,17 @@
         <div id="cessna-skyhawk" class="media-element">
             <img src="/aeolus/img/cessna-skyhawk.jpg" alt="">
             <p class="title">Cessna Skyhawk</p>
-            <p class="details"></p>
+            <p class="details">Not an actual hawk</p>
         </div>
         <div id="cessna-206" class="media-element">
             <img src="/aeolus/img/cessna-206.jpg" alt="">
             <p class="title">Cessna 206</p>
-            <p class="details"></p>
+            <p class="details">This one is 26 more plane than the 180</p>
         </div>
         <div id="cessna-180" class="media-element">
             <img src="/aeolus/img/cessna-180.jpg" alt="">
             <p class="title">Cessna 180</p>
-            <p class="details"></p>
+            <p class="details">Read the title.</p>
         </div>
         <div id="not-plane" class="media-element">
             <img src="/aeolus/img/not-plane.jpg" alt="">
@@ -89,10 +82,25 @@
             <p class="details">It's a fish.</p>
         </div>
     </div>
+
+    <!-- CONTACT -->
+    <div id="contact">
+        Floyd Fronius<br>
+        619-283-2336<br/>
+        San Diego, California<br/>
+        <a href="mailto:aeolusmachine@gmail.com">aeolusmachine@gmail.com</a>
+    </div>
+
     <script>
-        // GENERAL MENU FUNCTION
-        function menuFunction(item,x1,x2,x3) {
+        // CLICK HOME
+        // id:      navbar-id
+        // classes: .home & .navbar-mode
+        // 'info','metalwork-container','contact','aircraft'
+        function homeFunction(item,x1,x2,x3) {
+            document.getElementById('navbar-id').className = "home";
+            
             document.getElementById(item) .style.display='block';
+            document.getElementById('company') .style.display='block';
             document.getElementById(item) .style.animation='fadeIn 1s';
             document.getElementById(x1) .style.display='none';
             document.getElementById(x2) .style.display='none';
@@ -101,29 +109,46 @@
             document.getElementById(x1) .style.animation='fadeOut 1s';
             document.getElementById(x2) .style.animation='fadeOut 1s';
             document.getElementById(x3) .style.animation='fadeOut 1s';
-
-            if (document.getElementById('company') .style.display=='none') {
-                document.getElementById('company') .style.display='block';
-            }
         }
 
-        // AIRCRAFT MENU FUNCTION
-        function aircraftFunction(ac,x1,x2,x3) {
+        // CLICK CONTACT
+        function contactFunction(item,x1,x2,x3,x4) {
+            document.getElementById('navbar-id').className = "navbar-mode";
+            document.getElementById(item) .style.display='block';
+            document.getElementById(item) .style.animation='fadeIn 1s';
+            document.getElementById(x1) .style.display='none';
+            document.getElementById(x2) .style.display='none';
+            document.getElementById(x3) .style.display='none';
+            document.getElementById(x4) .style.display='none';
+            
+            document.getElementById(x1) .style.animation='fadeOut 1s';
+            document.getElementById(x2) .style.animation='fadeOut 1s';
+            document.getElementById(x3) .style.animation='fadeOut 1s';
+            document.getElementById(x4) .style.animation='fadeOut 1s';
+
+            // if (document.getElementById('company') .style.display=='none') {
+            //     document.getElementById('company') .style.display='block';
+            // }
+        }
+
+        // CLICK METALWORK & AIRCRAFT
+        function scrollFunction(ac,x1,x2,x3) {
+            document.getElementById('navbar-id').className = "navbar-mode";
+            // Makes all aircraft elements appear
+            const cardz = document.getElementsByClassName('media-element');
             document.getElementById(ac) .style.display='grid';
-            document.getElementById('card_goat') .style.display='grid';
-            document.getElementById('card_sunseeker') .style.display='grid';
-            document.getElementById('cessna-skyhawk') .style.display='grid';
-            document.getElementById('cessna-206') .style.display='grid';
-            document.getElementById('cessna-180') .style.display='grid';
-            document.getElementById('not-plane') .style.display='grid';
-            document.getElementById('fish') .style.display='grid';
+            for (let i = 0; i < cardz.length; i++) {
+                cardz[i].style.diplay='grid';
+            }
             document.getElementById(ac) .style.animation='fadeIn 1s';
 
+            // Vanishes the unwanted elements
             document.getElementById(x1) .style.display='none';
             document.getElementById(x2) .style.display='none';
             document.getElementById(x3) .style.display='none';
             document.getElementById('company') .style.display='none'
 
+            // Makes the vanish a fadeOut
             document.getElementById(x1) .style.animation='fadeOut 1s';
             document.getElementById(x2) .style.animation='fadeOut 1s';
             document.getElementById(x3) .style.animation='fadeOut 1s';
