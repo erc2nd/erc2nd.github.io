@@ -565,7 +565,7 @@ hr {
 
 .background-image {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url(/img/elec/conny-schneider-pREq0ns_p_E-unsplash.jpg);
+        url(img/elec/conny-schneider-pREq0ns_p_E-unsplash.jpg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -839,7 +839,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/img/elec/scott-rodgerson-PSpf_XgOM5w-unsplash.jpg);
+    background-image: url(img/elec/scott-rodgerson-PSpf_XgOM5w-unsplash.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
