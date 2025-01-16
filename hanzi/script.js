@@ -4,6 +4,8 @@ let hanzi;
 let filter_hanzi;
 let para;
 
+// Takes the text entered in the form and strips out any non-hanzi
+// Stores the remaining characters in a Set (hash table—faster to search than array)
 function add_vocab() {
     vocab = document.getElementById("vocab").value;
     filter_vocab = new Set();
@@ -15,6 +17,10 @@ function add_vocab() {
     return filter_vocab;
 }
 
+// Takes list of hanzi entered and compares it against list of 
+// characters stored in the filter_vocab set.
+// Deletes any matching hanzi.
+// Calls print_results() to print the non-matching chars to screen
 function add_hanzi() {
     hanzi = document.getElementById("hanzi").value;
     for (let i = 0; i < hanzi.length; i++) {
