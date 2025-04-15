@@ -1,0 +1,113 @@
+.pulse {
+    animation: pulse 1s alternate;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        font-size: larger;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.progress-container {
+    background-color: rgb(9, 18, 44);
+    border-radius: 20px;
+    height: 30px;
+    width: 300px;
+    margin: 1vh auto;
+}
+
+.progress-fill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: repeating-linear-gradient(to left, #0546e0, #1172f9, #4892f9);
+    border-radius: 20px;
+    color: #fff;
+    height: 100%;
+    width: 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.main {
+    width: 80vw;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.explanation {
+    width: 100%;
+    margin: auto;
+}
+
+.choose {
+    width: 100%;
+    margin: 5vh auto 0 auto;
+    text-align: center;
+}
+
+.lang-choice {
+    width: 30em;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+}
+
+.game-space {
+    display: grid;
+    justify-content: center;
+}
+
+.go {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+}
+
+.findWord {
+    width: 4em;
+    margin: auto;
+}
+
+.english,
+.lang-header-english,
+.en-text {
+    width: 12em;
+    margin: auto;
+    text-align: center;
+}
+
+.lang-header {
+    text-align: center;
+}
+
+.q-buttons {
+    display: grid;
+    justify-content: center;
+}
+
+.q-buttons>button {
+    background-color: rgb(220, 242, 241);
+    width: 20vw;
+    height: 2em;
+}
+
+.main-text {
+    text-align: center;
+}

@@ -1,0 +1,25 @@
+10 HTML TAGS USED:
+h1
+h2
+h3
+p
+div
+img
+nav
+header
+button
+input
+
+5 CSS PROPERTIES USED:
+margin
+padding
+background-color
+color
+font-family
+
+1 SENTENCES DESCRIPTION OF JS & BOOTSTRAP USE:
+I used Bootstrap to create a navbar for all the pages
+except the main page, and I used JS to implement 4
+distinct langauge learning games by listening for DOM
+events, updating HTML elements, loading from local files,
+interacting with APIs, and drawing to the canvas.

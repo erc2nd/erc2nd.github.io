@@ -1,0 +1,50 @@
+[
+    {
+        "zh": "人",
+        "en": "person",
+        "latin": "ren2",
+        "group": 0,
+        "state_multi": 0,
+        "state_typed": 0
+    },
+    {
+        "zh": "八",
+        "en": "eight",
+        "latin": "ba1",
+        "group": 0,
+        "state_multi": 0,
+        "state_typed": 0
+    },
+    {
+        "zh": "火",
+        "en": "fire",
+        "latin": "huo3",
+        "group": 0,
+        "state_multi": 0,
+        "state_typed": 0
+    },
+    {
+        "zh": "右",
+        "en": "right",
+        "latin": "you4",
+        "group": 3,
+        "state_multi": 0,
+        "state_typed": 0
+    },
+    {
+        "zh": "左",
+        "en": "left",
+        "latin": "zuo3",
+        "group": 3,
+        "state_multi": 0,
+        "state_typed": 0
+    },
+    {
+        "zh": "石",
+        "en": "stone",
+        "latin": "shi2",
+        "group": 3,
+        "state_multi": 0,
+        "state_typed": 0
+    }
+]

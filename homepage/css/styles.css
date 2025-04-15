@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(15, 16, 53);
+    color: #DCF2F1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0.12ch;
+    line-height: 1.5;
+}
+
+p {
+    max-width: 50ch;
+}
+
+/* #region NAVBAR */
+#header-img {
+    height: 5vh;
+    filter: invert(25%) sepia(61%) saturate(2522%) hue-rotate(330deg) brightness(87%) contrast(87%);
+}
+
+#header-img:hover {
+    animation: spinLogo 5s linear infinite;
+}
+
+@keyframes spinLogo {
+    from {
+        transform: rotateY(0rad);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+#my-nav {
+    background-color: rgb(9, 18, 44);
+}
+
+#my-nav .nav-link {
+    color: rgb(225, 117, 100);
+}
+
+#my-nav .nav-link:hover {
+    background-color: rgb(135, 35, 65);
+}
+
+#my-nav .active {
+    background-color: rgb(135, 35, 65);
+}
+
+#my-nav .dropdown-menu {
+    background-color: rgb(9, 18, 44);
+}
+
+#my-nav .dropdown-menu a {
+    color: rgb(225, 117, 100);
+}
+
+#my-nav .dropdown-menu a:hover {
+    background-color: rgb(135, 35, 65);
+}
+
+#my-nav .dropdown.active {
+    background-color: rgba(135, 35, 65, .35);
+}
+
+/* #endregion */

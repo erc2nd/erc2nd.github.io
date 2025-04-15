@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Kana Game</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/falling.css" rel="stylesheet">
+        <script src="js/fallingJA.js" defer></script>
+    </head>
+
+    <body>
+        <nav id="my-nav" class="navbar navbar-expand-sm">
+            <div class="container">
+                <a href="index.html" class="navbar-brand mb-0 h1 ">
+                    <img id="header-img" src="img/edu_char.webp" alt="The Chinese character for education, written in an old style" class="nav-image d-line-block align-top ">
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Japanese</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="triviaJA.html">Kanji Quiz</a>
+                            <a class="dropdown-item active" href="#">Kana Game</a>
+                            <a class="dropdown-item" href="snakeJA.html">Kanji Snake</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Chinese</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="triviaZH.html">Hanzi Quiz</a>
+                            <a class="dropdown-item" href="fallingZH.html">Zhuyin Game</a>
+                            <a class="dropdown-item" href="snakeZH.html">Hanzi Snake</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="compare.html" class="nav-link">Comparison Game</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="window">
+            <div class="instructions">
+                <p>Place your cursor in the box,
+                    then hit 'Enter' to start.<br>
+                    Type the reading of the characters
+                    you see into the box.</p>
+                <!-- Toggle styling took a lot from w3schools.com's tutorial -->
+                <div class="hoverhere">
+                    <label class="switch">
+                        <input class="checkbox" type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <p id="convert" class="note">Katakana&lt;&gt;Hiragana</p>
+                </div>
+            </div>
+            <div class="canvas-container">
+                <canvas></canvas>
+                <div class="input-container">
+                    <input type="text" class="answer" id="ans_box" autocomplete="off">
+                    <p class="input-instruct">^Type Here^</p>
+                </div>
+            </div>
+            <div class="utility">
+                <div class="score-container">
+                    <div class="correct">Correct: </div>
+                    <div class="wrong">Missed: </div>
+                </div>
+                <div class="speed">
+                    <p class="speed-label">Speed</p>
+                    <button class="speed-up btn btn-outline-light">+</button>
+                    <button class="speed-down btn btn-outline-light">-</button>
+                </div>
+            </div>
+            <div class="cheat">
+                <button class="reveal">Reveal Cheat Sheet</button>
+                <div class="sheetBinder hidden">
+                    <div class="hiragana sheet ">
+                        <table>
+                            <tr>
+                                <td>あ</td>
+                                <td>え</td>
+                                <td>い</td>
+                                <td>お</td>
+                                <td>う</td>
+                            </tr>
+                            <tr>
+                                <td>a</td>
+                                <td>e</td>
+                                <td>i</td>
+                                <td>o</td>
+                                <td>u</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>か</td>
+                                <td>け</td>
+                                <td>き</td>
+                                <td>こ</td>
+                                <td>く</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ka</td>
+                                <td>ke</td>
+                                <td>ki</td>
+                                <td>ko</td>
+                                <td>ku</td>
+                            </tr>
+                            <tr>
+                                <td>さ</td>
+                                <td>せ</td>
+                                <td>し</td>
+                                <td>そ</td>
+                                <td>す</td>
+                            </tr>
+                            <tr>
+                                <td>sa</td>
+                                <td>se</td>
+                                <td>shi</td>
+                                <td>so</td>
+                                <td>su</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>た</td>
+                                <td>て</td>
+                                <td>ち</td>
+                                <td>と</td>
+                                <td>つ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ta</td>
+                                <td>te</td>
+                                <td>chi</td>
+                                <td>to</td>
+                                <td>tsu</td>
+                            </tr>
+                            <tr>
+                                <td>な</td>
+                                <td>ね</td>
+                                <td>に</td>
+                                <td>の</td>
+                                <td>ぬ</td>
+                            </tr>
+                            <tr>
+                                <td>na</td>
+                                <td>ne</td>
+                                <td>ni</td>
+                                <td>no</td>
+                                <td>nu</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>は</td>
+                                <td>へ</td>
+                                <td>ひ</td>
+                                <td>ほ</td>
+                                <td>ふ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ha</td>
+                                <td>he</td>
+                                <td>hi</td>
+                                <td>ho</td>
+                                <td>fu</td>
+                            </tr>
+                            <tr>
+                                <td>ま</td>
+                                <td>め</td>
+                                <td>み</td>
+                                <td>も</td>
+                                <td>む</td>
+                            </tr>
+                            <tr>
+                                <td>ma</td>
+                                <td>me</td>
+                                <td>mi</td>
+                                <td>mo</td>
+                                <td>mu</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>や</td>
+                                <td></td>
+                                <td>ゆ</td>
+                                <td></td>
+                                <td>よ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ya</td>
+                                <td></td>
+                                <td>yu</td>
+                                <td></td>
+                                <td>yo</td>
+                            </tr>
+                            <tr>
+                                <td>ら</td>
+                                <td>れ</td>
+                                <td>り</td>
+                                <td>ろ</td>
+                                <td>る</td>
+                            </tr>
+                            <tr>
+                                <td>ra</td>
+                                <td>re</td>
+                                <td>ri</td>
+                                <td>ro</td>
+                                <td>ru</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>わ</td>
+                                <td></td>
+                                <td>を</td>
+                                <td></td>
+                                <td>ん</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>wa</td>
+                                <td></td>
+                                <td>wo</td>
+                                <td></td>
+                                <td>n</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="katakana sheet unselected">
+                        <table>
+                            <tr>
+                                <td>ア</td>
+                                <td>エ</td>
+                                <td>イ</td>
+                                <td>オ</td>
+                                <td>ウ</td>
+                            </tr>
+                            <tr>
+                                <td>a</td>
+                                <td>e</td>
+                                <td>i</td>
+                                <td>o</td>
+                                <td>u</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>カ</td>
+                                <td>ケ</td>
+                                <td>キ</td>
+                                <td>コ</td>
+                                <td>ク</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ka</td>
+                                <td>ke</td>
+                                <td>ki</td>
+                                <td>ko</td>
+                                <td>ku</td>
+                            </tr>
+                            <tr>
+                                <td>サ</td>
+                                <td>セ</td>
+                                <td>シ</td>
+                                <td>ソ</td>
+                                <td>ス</td>
+                            </tr>
+                            <tr>
+                                <td>sa</td>
+                                <td>se</td>
+                                <td>shi</td>
+                                <td>so</td>
+                                <td>su</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>タ</td>
+                                <td>テ</td>
+                                <td>チ</td>
+                                <td>ト</td>
+                                <td>ツ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ta</td>
+                                <td>te</td>
+                                <td>chi</td>
+                                <td>to</td>
+                                <td>tsu</td>
+                            </tr>
+                            <tr>
+                                <td>ナ</td>
+                                <td>ネ</td>
+                                <td>ニ</td>
+                                <td>ノ</td>
+                                <td>ヌ</td>
+                            </tr>
+                            <tr>
+                                <td>na</td>
+                                <td>ne</td>
+                                <td>ni</td>
+                                <td>no</td>
+                                <td>nu</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ハ</td>
+                                <td>ヘ</td>
+                                <td>ヒ</td>
+                                <td>ホ</td>
+                                <td>フ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ha</td>
+                                <td>he</td>
+                                <td>hi</td>
+                                <td>ho</td>
+                                <td>fu</td>
+                            </tr>
+                            <tr>
+                                <td>マ</td>
+                                <td>メ</td>
+                                <td>ミ</td>
+                                <td>モ</td>
+                                <td>ム</td>
+                            </tr>
+                            <tr>
+                                <td>ma</td>
+                                <td>me</td>
+                                <td>mi</td>
+                                <td>mo</td>
+                                <td>mu</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ヤ</td>
+                                <td></td>
+                                <td>ユ</td>
+                                <td></td>
+                                <td>ヨ</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ya</td>
+                                <td></td>
+                                <td>yu</td>
+                                <td></td>
+                                <td>yo</td>
+                            </tr>
+                            <tr>
+                                <td>ラ</td>
+                                <td>レ</td>
+                                <td>リ</td>
+                                <td>ロ</td>
+                                <td>ル</td>
+                            </tr>
+                            <tr>
+                                <td>ra</td>
+                                <td>re</td>
+                                <td>ri</td>
+                                <td>ro</td>
+                                <td>ru</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>ワ</td>
+                                <td></td>
+                                <td>ヲ</td>
+                                <td></td>
+                                <td>ン</td>
+                            </tr>
+                            <tr class="cheat-line">
+                                <td>wa</td>
+                                <td></td>
+                                <td>wo</td>
+                                <td></td>
+                                <td>n</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

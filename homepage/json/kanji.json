@@ -1,0 +1,56 @@
+[
+{
+    "jp": "人",
+    "en": "person",
+    "latin": ["nin", "jin", "hito"],
+    "kana": ["にん","じん","ひと"],
+    "group": 0,
+    "state_multi": 0,
+    "state_typed": 0
+},
+{
+    "jp": "八",
+    "en": "eight",
+    "latin": ["ya", "you", "hachi", "hatsu"],
+    "kana": ["や","よう","はち","はつ"],
+    "group": 0,
+    "state_multi": 0,
+    "state_typed": 0
+},
+{
+    "jp": "火",
+    "en": "fire",
+    "latin": ["ka", "hi"],
+    "kana": ["か","ひ"],
+    "group": 0,
+    "state_multi": 0,
+    "state_typed": 0
+},
+{
+    "jp": "右",
+    "en": "right",
+    "latin": ["migi", "yu"],
+    "kana": ["みぎ","ゆ"],
+    "group": 3,
+    "state_multi": 0,
+    "state_typed": 0
+},
+{
+    "jp": "左",
+    "en": "left",
+    "latin": ["hidari", "sa"],
+    "kana": ["ひだり","さ"],
+    "group": 3,
+    "state_multi": 0,
+    "state_typed": 0
+},
+{
+    "jp": "石",
+    "en": "stone",
+    "latin": ["ishi", "seki", "shaku", "koku"],
+    "kana": ["いし","せき","しゃく","こく"],
+    "group": 3,
+    "state_multi": 0,
+    "state_typed": 0
+}
+]

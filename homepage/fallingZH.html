@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Zhuyin Game</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/falling.css" rel="stylesheet">
+        <script src="js/fallingZH.js" defer></script>
+    </head>
+
+    <body>
+        <nav id="my-nav" class="navbar navbar-expand-sm">
+            <div class="container">
+                <a href="index.html" class="navbar-brand mb-0 h1 ">
+                    <img id="header-img" src="img/edu_char.webp" alt="The Chinese character for education, written in an old style" class="nav-image d-line-block align-top ">
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Japanese</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="triviaJA.html">Kanji Quiz</a>
+                            <a class="dropdown-item" href="fallingJA.html">Kana Game</a>
+                            <a class="dropdown-item" href="snakeJA.html">Kanji Snake</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Chinese</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="triviaZH.html">Hanzi Quiz</a>
+                            <a class="dropdown-item active" href="#">Zhuyin Game</a>
+                            <a class="dropdown-item" href="snakeZH.html">Hanzi Snake</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="compare.html" class="nav-link">Comparison Game</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="window">
+            <p class="instructions">
+                Place your cursor in the box,
+                then hit 'Enter' to start.<br>
+                Type the reading of the characters
+                you see into the box.
+            </p>
+            <div class="canvas-container">
+                <canvas></canvas>
+                <div class="input-container">
+                    <input type="text" class="answer" id="ans_box" autocomplete="off">
+                    <p class="input-instruct">^Type Here^</p>
+                </div>
+            </div>
+            <div class="utility">
+                <div class="score-container">
+                    <div class="correct">Correct: </div>
+                    <div class="wrong">Missed: </div>
+                </div>
+                <div class="speed">
+                    <p class="speed-label">Speed</p>
+                    <button class="speed-up btn btn-outline-light">+</button>
+                    <button class="speed-down btn btn-outline-light">-</button>
+                </div>
+            </div>
+            <div class="cheat">
+                <button class="reveal">Reveal Cheat Sheet</button>
+                <div class="sheet hidden">
+                    <table>
+                        <tr>
+                            <td>ㄅ</td>
+                            <td>ㄆ</td>
+                            <td>ㄇ</td>
+                            <td>ㄈ</td>
+                            <td>ㄉ</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>p</td>
+                            <td>m</td>
+                            <td>f</td>
+                            <td>d</td>
+                        </tr>
+
+                        <tr class="cheat-line">
+                            <td>ㄊ</td>
+                            <td>ㄋ</td>
+                            <td>ㄌ</td>
+                            <td>ㄍ</td>
+                            <td>ㄎ</td>
+                        </tr>
+                        <tr class="cheat-line">
+                            <td>t</td>
+                            <td>n</td>
+                            <td>l</td>
+                            <td>g</td>
+                            <td>k</td>
+                        </tr>
+
+                        <tr>
+                            <td>ㄏ</td>
+                            <td>ㄐ</td>
+                            <td>ㄑ</td>
+                            <td>ㄒ</td>
+                            <td>ㄓ</td>
+                        </tr>
+                        <tr>
+                            <td>h</td>
+                            <td>j</td>
+                            <td>q</td>
+                            <td>x</td>
+                            <td>zh</td>
+                        </tr>
+
+                        <tr class="cheat-line">
+                            <td>ㄔ</td>
+                            <td>ㄕ</td>
+                            <td>ㄖ</td>
+                            <td>ㄗ</td>
+                            <td>ㄘ</td>
+                        </tr>
+                        <tr class="cheat-line">
+                            <td>ch</td>
+                            <td>sh</td>
+                            <td>r</td>
+                            <td>z</td>
+                            <td>c</td>
+                        </tr>
+
+                        <tr>
+                            <td>ㄙ</td>
+                            <td>ㄚ</td>
+                            <td>ㄛ</td>
+                            <td>ㄜ</td>
+                            <td>ㄝ</td>
+                        </tr>
+                        <tr>
+                            <td>s</td>
+                            <td>a</td>
+                            <td>o</td>
+                            <td>e</td>
+                            <td>ê</td>
+                        </tr>
+
+                        <tr class="cheat-line">
+                            <td>ㄞ</td>
+                            <td>ㄟ</td>
+                            <td>ㄠ</td>
+                            <td>ㄡ</td>
+                            <td>ㄢ</td>
+                        </tr>
+                        <tr class="cheat-line">
+                            <td>ai</td>
+                            <td>ei</td>
+                            <td>ao</td>
+                            <td>ou</td>
+                            <td>an</td>
+                        </tr>
+
+                        <tr>
+                            <td>ㄣ</td>
+                            <td>ㄤ</td>
+                            <td>ㄥ</td>
+                            <td>ㄦ</td>
+                            <td>ㄧ</td>
+                        </tr>
+                        <tr>
+                            <td>en</td>
+                            <td>ang</td>
+                            <td>eng</td>
+                            <td>er</td>
+                            <td>i</td>
+                        </tr>
+
+                        <tr class="cheat-line">
+                            <td></td>
+                            <td>ㄨ</td>
+                            <td>ㄩ</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="cheat-line">
+                            <td></td>
+                            <td>u</td>
+                            <td>ü</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

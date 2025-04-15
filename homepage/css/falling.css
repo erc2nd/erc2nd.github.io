@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    background-color: #154c79;
+}
+
+.window {
+    background-color: #063970;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    grid-template-areas: "cheat game game info"
+        "cheat game game util";
+}
+
+.instructions {
+    grid-area: info;
+    width: 23vw;
+    margin-top: 50%;
+    justify-self: center;
+    align-self: center;
+}
+
+.hoverhere {
+    position: relative;
+    top: 2em;
+    display: grid;
+    justify-items: center;
+}
+
+.utility {
+    grid-area: util;
+}
+
+/* #region PLAYAREA */
+.canvas-container {
+    grid-area: game;
+    position: relative;
+    text-align: center;
+    width: 50vw;
+    height: 80vh;
+    vertical-align: bottom;
+    top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-container {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 15vh;
+    font-family: sans-serif;
+}
+
+.answer {
+    height: 2rem;
+    width: 10vw;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.input-instruct {
+    color: white;
+
+}
+
+.score-container {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    bottom: 15vh;
+    color: white;
+    font-size: 2em;
+}
+
+.speed {
+    position: relative;
+    top: 15%;
+    bottom: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.speed-label {
+    color: white;
+    font-size: 2em;
+}
+
+.speed-up,
+.speed-down {
+    height: 3em;
+    width: 3em;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+canvas {
+    display: inline;
+    vertical-align: bottom;
+    border: 1px solid black;
+    width: 50vw;
+    height: 80vh;
+    background-color: #063970;
+}
+
+/* #endregion */
+
+/* #region CHEATSHEET */
+.cheat {
+    grid-area: cheat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reveal {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.sheet {
+    padding: 1vh 0 1vh 0;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, .07);
+    text-align: center;
+    color: white;
+    font-size: 1.15em;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.unselected {
+    display: none;
+}
+
+.cheat-line>* {
+    background-color: #063970;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    left: 0.2em;
+    bottom: 0.1em;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #3B1C32;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #3B1C32;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(1em);
+    -ms-transform: translateX(1em);
+    transform: translateX(1em);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* #endregion */
+
+
+@media all and (max-width: 800px) {
+    .window {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instructions {
+        width: 60vw;
+        margin-top: 5%;
+    }
+
+    .utility {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+
+    .score-container {
+        position: relative;
+        top: 5vh;
+        left: 0;
+        bottom: 0;
+        color: white;
+        font-size: 2em;
+        font-family: sans-serif;
+        width: 100%;
+        text-align: center;
+    }
+
+    .speed {
+        top: 7vh;
+        left: 0;
+        bottom: 0;
+    }
+
+    .cheat {
+        position: relative;
+        width: 100%;
+        top: 10vh;
+    }
+}
